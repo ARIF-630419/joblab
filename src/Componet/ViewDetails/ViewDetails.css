@@ -1,0 +1,12 @@
+.separate {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 4;
+}
+.padding p {
+  padding: 5px;
+}
+.textbold {
+  font-size: 16;
+  font-weight: 800;
+}
