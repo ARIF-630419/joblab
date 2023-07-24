@@ -3,7 +3,7 @@ import ActiveLink from "../ActiveLink/ActiveLink";
 
 const Header = () => {
   return (
-    <nav className="flex justify-between items-center py-[35px]">
+    <nav className="flex justify-between items-center py-[20px] w-10/12 mx-auto ">
       <div className="text-[#1A1919] font-[800] text-[32px]">
         Job<span className="text-[orange]">Lab</span>
       </div>

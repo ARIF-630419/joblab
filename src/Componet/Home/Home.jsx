@@ -4,7 +4,7 @@ import FeaturesJob from "../FeaturesJob/FeaturesJob";
 const Home = () => {
   return (
     <>
-      <div className="flex mt-12 p-[100px] bg-[#F9F9FF] mb-10 ">
+      <div className="flex p-[100px] bg-[#F9F9FF] mb-10 ">
         <div className="w-1/2">
           <h1 className="text-[80px] font-[800] leading-[100px] mt-[130px]">
             One Step <br /> Closer To Your <br /> <span>Dream Job</span>
