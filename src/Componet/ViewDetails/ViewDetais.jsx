@@ -8,6 +8,10 @@ import p from "../../assets/Icons/Frame-2.png";
 import e from "../../assets/Icons/Frame-3.png";
 import a from "../../assets/Icons/Frame-4.png";
 import s from "../../assets/Icons/Frame.png";
+import { addToDb } from "../../utilities/fakedb";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ViewDetais = () => {
   const paramsId = useParams();
@@ -20,6 +24,10 @@ const ViewDetais = () => {
   const getid = parseInt(paramsId.id);
   const smalljobs = jobs.find((job) => job.id === getid);
   console.log(smalljobs);
+  const handleAddToDb = (jobData) => {
+    addToDb(jobData.id);
+    toast("successful to apply");
+  };
   if (jobs.length < 1) {
     return;
   }
@@ -109,10 +117,14 @@ const ViewDetais = () => {
               </div>
             </div>
           </div>
-          <button className=" font-[800] text-[20px] text-[white] px-[26px] py-[19px] w-[100%] my-6 rounded-[8px] bg-gradient-to-r from-[#7E90FE] to-[#9873FF]">
+          <button
+            onClick={() => handleAddToDb(smalljobs)}
+            className=" font-[800] text-[20px] text-[white] px-[26px] py-[19px] w-[100%] my-6 rounded-[8px] bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"
+          >
             {/* <Link to="/viewDetais"> View Details</Link> */}
             Apply Now
           </button>
+          <ToastContainer></ToastContainer>
         </dir>
       </div>
     </div>
