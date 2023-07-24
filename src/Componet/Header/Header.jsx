@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import ActiveLink from "../ActiveLink/ActiveLink";
+import { useState } from "react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 const Header = () => {
+  const [bar, setBar] = useState(false);
+
   return (
     <nav className="flex justify-between items-center py-[20px] w-10/12 mx-auto ">
       <div className="text-[#1A1919] font-[800] text-[32px]">
@@ -18,6 +22,21 @@ const Header = () => {
           Star Applying
         </button>
       </Link>
+      <div className="lg:hidden sm:block md:hidden">
+        {/* className="flex justify-end sm:block lg:hidden" */}
+        <button
+          className="bg-gray-500 px-2 py-1 rounded-md"
+          onClick={() => setBar(!bar)}
+        >
+          <span>
+            {bar ? (
+              <XMarkIcon className="h-8 w-8 text-white" />
+            ) : (
+              <Bars3Icon className="h-8 w-8 text-white" />
+            )}
+          </span>
+        </button>
+      </div>
     </nav>
   );
 };
